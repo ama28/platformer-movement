@@ -8,7 +8,7 @@ public class PlayerAnimator : MonoBehaviour
     private Animator anim;
     private SpriteRenderer spriteRend;
 
-    private DemoManager demoManager;
+    // private DemoManager demoManager;
 
     [Header("Movement Tilt")]
     [SerializeField] private float maxTilt;
@@ -31,7 +31,7 @@ public class PlayerAnimator : MonoBehaviour
         spriteRend = GetComponentInChildren<SpriteRenderer>();
         anim = spriteRend.GetComponent<Animator>();
 
-        demoManager = FindObjectOfType<DemoManager>();
+        // demoManager = FindObjectOfType<DemoManager>();
 
         _jumpParticle = jumpFX.GetComponent<ParticleSystem>();
         _landParticle = landFX.GetComponent<ParticleSystem>();
@@ -62,9 +62,9 @@ public class PlayerAnimator : MonoBehaviour
         CheckAnimationState();
 
         ParticleSystem.MainModule jumpPSettings = _jumpParticle.main;
-        jumpPSettings.startColor = new ParticleSystem.MinMaxGradient(demoManager.SceneData.foregroundColor);
+        // jumpPSettings.startColor = new ParticleSystem.MinMaxGradient(demoManager.SceneData.foregroundColor);
         ParticleSystem.MainModule landPSettings = _landParticle.main;
-        landPSettings.startColor = new ParticleSystem.MinMaxGradient(demoManager.SceneData.foregroundColor);
+        // landPSettings.startColor = new ParticleSystem.MinMaxGradient(demoManager.SceneData.foregroundColor);
     }
 
     private void CheckAnimationState()
